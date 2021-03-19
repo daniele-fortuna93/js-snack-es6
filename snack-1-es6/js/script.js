@@ -3,7 +3,7 @@
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
 // 1. Creo array di bici
-var bici = [
+const bici = [
   {
     nome: "Bottecchia",
     peso: 3000
@@ -22,10 +22,10 @@ var bici = [
   }
 ];
 // 2. Creo variabile a cui assegno il primo oggetto dell'array bici
-var biciLeggera = bici[0];
+let biciLeggera = bici[0];
 
 // 3. Ciclo l'array per confrontare i pesi delle biciclette
-for (var i = 1; i < bici.length; i++) {
+for (let i = 1; i < bici.length; i++) {
   if ( bici[i].peso < biciLeggera.peso ) {
     biciLeggera = bici[i];
   }

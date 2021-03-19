@@ -6,12 +6,12 @@
 
 // Funzioni
 function numeroRandom(min, max) {
-  var num = Math.floor(Math.random() * (max - min + 1) + min);
+  let num = Math.floor(Math.random() * (max - min + 1) + min);
   return num;
 }
 
 // 1. Creo array di objects
-var squadre = [
+const squadre = [
   {
     nome: "Lazio",
     puntiFatti: 0,
@@ -38,3 +38,21 @@ var squadre = [
     falliSubiti: 0
   }
 ];
+console.log(squadre);
+
+// 2. Creo nuovo array vuoto
+let nomeFalli = [];
+
+// 3. Ciclo tutto l'arrai di object per assegnare le chiavi
+for (let i = 0; i < squadre.length; i++) {
+  squadre[i].puntiFatti = numeroRandom(20,50);
+  squadre[i].falliSubiti = numeroRandom(30,70);
+}
+ // 4. Creo i nuovi oggetti con le caratteristiche che mi servono
+for (let i = 0; i < squadre.length; i++) {
+  const { nome, falliSubiti } = squadre[i];
+
+  nomeFalli.push({nome, falliSubiti}); // Pusho nell'array l'oggetto con le sole chiavi nome e falliSubiti
+}
+// 5. Stampo il nuovo array
+console.log(nomeFalli);
